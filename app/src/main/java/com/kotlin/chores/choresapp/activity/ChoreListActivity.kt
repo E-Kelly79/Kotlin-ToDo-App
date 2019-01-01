@@ -51,6 +51,7 @@ class ChoreListActivity : AppCompatActivity() {
 
         for (c in choreList!!.iterator()){
            val chore = Chore()
+            chore.id = c.id
             chore.choreName = c.choreName
             chore.assignedTo  = c.assignedTo
             chore.assignedBy = c.assignedBy
@@ -72,7 +73,8 @@ class ChoreListActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun createPopupDialog(){
+
+    fun createPopupDialog() {
         var view = layoutInflater.inflate(R.layout.popup, null)
         var choreName = view.popEnterChore
         var assignedBy = view.popAssignedBy
@@ -89,18 +91,17 @@ class ChoreListActivity : AppCompatActivity() {
             var aTo = assignedTo.text.toString().trim()
             if (!TextUtils.isEmpty(name)
                 && !TextUtils.isEmpty(aBy)
-                && !TextUtils.isEmpty(aTo)){
+                && !TextUtils.isEmpty(aTo)
+            ) {
                 var chore = Chore()
                 chore.choreName = name
                 chore.assignedBy = aBy
                 chore.assignedTo = aTo
-                  dbHandler!!.createChroe(chore)
+                dbHandler!!.createChroe(chore)
 
                 dialog!!.dismiss()
                 startActivity(Intent(this, ChoreListActivity::class.java))
                 finish()
-            }else{
-
             }
         }
     }
