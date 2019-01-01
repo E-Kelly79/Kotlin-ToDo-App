@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chores App</string>
+    <string name="app_name">Kotlin ToDo</string>
     <string name="hint_enter_chore">Enter Chore</string>
     <string name="hint_assign_to">Assign To</string>
     <string name="hint_assigned_by">Assigned By</string>
