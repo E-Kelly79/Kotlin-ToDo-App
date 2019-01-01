@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chores App</string>
+    <string name="hint_enter_chore">Enter Chore</string>
+    <string name="hint_assign_to">Assign To</string>
+    <string name="hint_assigned_by">Assigned By</string>
+    <string name="action_add_chore">Add Chore</string>
+    <string name="title_header">Add a chore and assign someone to that chore</string>
+</resources>
