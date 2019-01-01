@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:layout_width="0dp"
@@ -71,8 +72,9 @@
                 android:id="@+id/editBtn"
                 android:layout_width="45dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="16dp"
                 android:layout_alignStart="@id/listAssignedTime"
-                android:layout_alignBottom="@id/listChoreName"
+
                 android:background="@android:drawable/ic_menu_edit"
                 android:layout_alignLeft="@id/listAssignedTime" />
 
@@ -82,7 +84,7 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="16dp"
                 android:layout_toRightOf="@id/editBtn"
-                android:layout_alignBottom="@id/listChoreName"
+                android:layout_marginTop="16dp"
                 android:background="@android:drawable/ic_delete" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>

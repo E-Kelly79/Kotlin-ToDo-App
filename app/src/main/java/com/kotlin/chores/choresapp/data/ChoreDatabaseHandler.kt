@@ -72,6 +72,28 @@ class ChoreDatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABAS
         return chore
     }
 
+    fun getChores(): ArrayList<Chore>{
+        var db: SQLiteDatabase = readableDatabase
+        val list: ArrayList<Chore> = ArrayList()
+        var getAllRecords = "SELECT * FROM $TABLE_NAME"
+        var cursor: Cursor = db.rawQuery(getAllRecords, null)
+
+        //Loop trough chores
+        if(cursor.moveToFirst()){
+            do{
+                var chore = Chore()
+                chore.id = cursor.getInt(cursor.getColumnIndex(KEY_ID))
+                chore.choreName = cursor.getString(cursor.getColumnIndex(KEY_CHORE_NAME))
+                chore.assignedTo = cursor.getString(cursor.getColumnIndex(KEY_CHORE_ASSIGNED_TO))
+                chore.timeAssigned = cursor.getLong(cursor.getColumnIndex(KEY_CHORE_ASSIGNED_TIME))
+                chore.assignedBy = cursor.getString(cursor.getColumnIndex(KEY_CHORE_ASSIGNED_BY))
+                list.add(chore)
+            }while (cursor.moveToNext())
+        }
+
+        return list
+    }
+
     fun updateChore(chore: Chore): Int{
         var values :ContentValues = ContentValues()
         values.put(KEY_CHORE_NAME, chore.choreName)

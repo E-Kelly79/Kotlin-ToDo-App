@@ -1,5 +1,8 @@
 package com.kotlin.chores.choresapp.model
 
+import java.text.DateFormat
+import java.util.Date
+
 class Chore() {
     var choreName: String? = null
     var assignedTo: String? = null
@@ -13,5 +16,11 @@ class Chore() {
         this.assignedBy = assignedBy
         this.timeAssigned = timeAssigned
         this.id = id
+    }
+
+    fun showHumanDate(timeAssigned: Long): String{
+        var dateFormat: java.text.DateFormat = DateFormat.getDateInstance()
+        var formattedDate: String = dateFormat.format(Date(timeAssigned).time)
+        return formattedDate
     }
 }
