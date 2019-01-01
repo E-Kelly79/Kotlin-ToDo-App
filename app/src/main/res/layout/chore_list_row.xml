@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/listChoreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@id/cardImage"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/cardImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/listAssignedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/listChoreName"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_toRightOf="@id/cardImage"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/listAssignedTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/cardImage"
+                android:layout_below="@id/listAssignedBy"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/listAssignedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@id/cardImage"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Date: 12 April 2017" />
+
+            <Button
+                android:id="@+id/editBtn"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_alignStart="@id/listAssignedTime"
+                android:layout_alignBottom="@id/listChoreName"
+                android:background="@android:drawable/ic_menu_edit"
+                android:layout_alignLeft="@id/listAssignedTime" />
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/editBtn"
+                android:layout_alignBottom="@id/listChoreName"
+                android:background="@android:drawable/ic_delete" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>
