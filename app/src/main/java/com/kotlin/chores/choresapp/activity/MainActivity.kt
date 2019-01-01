@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(layout.activity_main)
         progeressDialog = ProgressDialog(this)
         dbHandler = ChoreDatabaseHandler(this)
+        checkDb()
 
         addChoreBtn.setOnClickListener {
             progeressDialog!!.setMessage("Saving data please wait")
@@ -48,6 +49,12 @@ class MainActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Please make sure all fields are filled in", Toast.LENGTH_LONG).show()
             }
+        }
+    }
+
+    fun checkDb(){
+        if (dbHandler!!.countChores() > 0) {
+            startActivity(Intent(this, ChoreListActivity::class.java))
         }
     }
 
